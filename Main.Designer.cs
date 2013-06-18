@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lSSID = new System.Windows.Forms.Label();
             this.txtSSID = new System.Windows.Forms.TextBox();
             this.lPassword = new System.Windows.Forms.Label();
@@ -136,6 +137,7 @@
             this.Controls.Add(this.txtSSID);
             this.Controls.Add(this.lSSID);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Text = "Virtual Access Point/虚拟热点管理";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
