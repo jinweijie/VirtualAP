@@ -1,21 +1,25 @@
-# Virtual AP / ĞéÄâÈÈµã¹ÜÀí
+ï»¿# Virtual AP / è™šæ‹Ÿçƒ­ç‚¹ç®¡ç†
 
-## Introduction / ½éÉÜ
+## Introduction / ä»‹ç»
 
 A tool for start/stop Microsoft Hosted Network Virtual Adapter.
 
-Ò»¸öÈÃPC±äÎªÎŞÏßÈÈµãµÄĞ¡¹¤¾ß
+ä¸€ä¸ªè®©PCå˜ä¸ºæ— çº¿çƒ­ç‚¹çš„å°å·¥å…·
 
-## Usage / Ê¹ÓÃ²½Öè
+## System Prerequisites / ç³»ç»Ÿè¦æ±‚
 
-1. Execute VirtualAP.exe (If you're using Windows 8, please run it using administrator priviledge.) / ÔËĞĞ VirtualAP.exe (Èç¹ûÊÇWindows 8£¬ÇëÓÒ¼ü->ÒÔ¹ÜÀíÔ±Éí·İÔËĞĞ¡£)
+Windows 7 and above / Windows 7 ä»¥ä¸Š
+
+## Usage / ä½¿ç”¨æ­¥éª¤
+
+1. Execute VirtualAP.exe (If you're using Windows 8, please run it using administrator priviledge.) / è¿è¡Œ VirtualAP.exe (å¦‚æœæ˜¯Windows 8ï¼Œè¯·å³é”®->ä»¥ç®¡ç†å‘˜èº«ä»½è¿è¡Œã€‚)
 
 	![Step 1](http://www.jinweijie.com/download/virtualap/step1.png)
 
-2. Enter your SSID and password and click `Start AP`. / ÊäÈëSSIDºÍÃÜÂë£¬µã»÷Æô¶¯ÈÈµã¡£
+2. Enter your SSID and password and click `Start AP`. / è¾“å…¥SSIDå’Œå¯†ç ï¼Œç‚¹å‡»å¯åŠ¨çƒ­ç‚¹ã€‚
 
 	![Step 2](http://www.jinweijie.com/download/virtualap/step2.png)
 
-3. Share your current connection to the new created adapter. / ¹²ÏíÏÖÓĞÁ¬½Ó¸øĞÂ´´½¨µÄĞéÄâÁ¬½Ó¡£
+3. Share your current connection to the new created adapter. / å…±äº«ç°æœ‰è¿æ¥ç»™æ–°åˆ›å»ºçš„è™šæ‹Ÿè¿æ¥ã€‚
 
 	![Step 3](http://www.jinweijie.com/download/virtualap/step3.png)
