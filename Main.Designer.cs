@@ -76,9 +76,9 @@
             // 
             // btnStartAP
             // 
-            this.btnStartAP.Location = new System.Drawing.Point(83, 101);
+            this.btnStartAP.Location = new System.Drawing.Point(80, 101);
             this.btnStartAP.Name = "btnStartAP";
-            this.btnStartAP.Size = new System.Drawing.Size(100, 23);
+            this.btnStartAP.Size = new System.Drawing.Size(112, 23);
             this.btnStartAP.TabIndex = 4;
             this.btnStartAP.Text = "Start AP/启动热点";
             this.btnStartAP.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             // 
             // btnStopAP
             // 
-            this.btnStopAP.Location = new System.Drawing.Point(189, 101);
+            this.btnStopAP.Location = new System.Drawing.Point(197, 101);
             this.btnStopAP.Name = "btnStopAP";
             this.btnStopAP.Size = new System.Drawing.Size(111, 23);
             this.btnStopAP.TabIndex = 5;
