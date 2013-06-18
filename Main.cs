@@ -19,13 +19,80 @@ namespace VirtualAP
         {
             InitializeComponent();
         }
-
+        #region event handler
+        
         private void btnStartAP_Click(object sender, EventArgs e)
         {
+            bool isInputValid = ValidInput();
+
+            if (!isInputValid)
+                return;
+
             var ssid = this.txtSSID.Text.Trim();
             var password = this.txtPassword.Text.Trim();
 
             StartAP(ssid, password);
+        }
+        
+        private void btnStopAP_Click(object sender, EventArgs e)
+        {
+            this.txtOutput.Text = string.Empty;
+
+            string cmd = string.Format(@"netsh wlan stop hostednetwork");
+            ExecuteCmd(cmd);
+        }
+
+        void cmdProcess_OutputDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            this.txtOutput.Text += (e.Data + "\r\n");
+        }
+
+        void cmdProcess_ErrorDataReceived(object sender, DataReceivedEventArgs e)
+        {
+            this.txtOutput.Text += (e.Data + "\r\n");
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                SaveData();
+            }
+            catch { }
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadVersion();
+                LoadData();
+            }
+            catch { }
+        }
+
+        #endregion
+
+        #region private methods
+
+        private bool ValidInput()
+        {
+            string ssid = this.txtSSID.Text.Trim();
+            string password = this.txtPassword.Text.Trim();
+
+            if (string.IsNullOrEmpty(ssid))
+            {
+                MessageBox.Show("SSID cannot be empty./SSID不能为空。");
+                return false;
+            }
+
+            if (password.Length < 8)
+            {
+                MessageBox.Show("Password needs at least 8 characters./密码至少需要8位。");
+                return false;
+            }
+
+            return true;
         }
 
         private void StartAP(string ssid, string password)
@@ -37,14 +104,6 @@ namespace VirtualAP
 
             string cmd2 = string.Format(@"netsh wlan start hostednetwork");
             ExecuteCmd(cmd2);
-        }
-
-        private void btnStopAP_Click(object sender, EventArgs e)
-        {
-            this.txtOutput.Text = string.Empty;
-
-            string cmd = string.Format(@"netsh wlan stop hostednetwork");
-            ExecuteCmd(cmd);
         }
 
         private void ExecuteCmd(string cmd)
@@ -72,43 +131,12 @@ namespace VirtualAP
             cmdProcess.WaitForExit();
         }
 
-        void cmdProcess_OutputDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            this.txtOutput.Text += (e.Data + "\r\n");
-        }
-
-        void cmdProcess_ErrorDataReceived(object sender, DataReceivedEventArgs e)
-        {
-            this.txtOutput.Text += (e.Data + "\r\n");
-        }
-
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            try
-            {
-                SaveData();
-            }
-            catch { }
-        }
-
-
-        private void frmMain_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                LoadVersion();
-                LoadData();
-            }
-            catch { }
-        }
 
         private void LoadVersion()
         {
             this.lVersion.Text = string.Format("Ver:{0}", Assembly.GetExecutingAssembly().GetName().Version);
         }
-
-
-
+        
         private void LoadData()
         {
             if (!File.Exists(Consts.DATA_FILE_NAME))
@@ -126,7 +154,6 @@ namespace VirtualAP
             this.txtPassword.Text = info.Password;
         }
 
-
         private void SaveData()
         {
             APInfo info = new APInfo
@@ -142,5 +169,9 @@ namespace VirtualAP
                 writer.Write(json);
             }
         }
+
+        #endregion
+
+        
     }
 }
