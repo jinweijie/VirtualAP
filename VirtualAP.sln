@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualAP", "VirtualAP.csproj", "{EF6DAD10-F7AB-4735-83B2-AFE8985E5AFF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF6DAD10-F7AB-4735-83B2-AFE8985E5AFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF6DAD10-F7AB-4735-83B2-AFE8985E5AFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF6DAD10-F7AB-4735-83B2-AFE8985E5AFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF6DAD10-F7AB-4735-83B2-AFE8985E5AFF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+bin/
+obj/
+packages/
+*.suo
+*.csproj.user
+build/
+TestResults/
+docs/
+*.mdf
+*.pubxml.user
+!packages/repositories.config
