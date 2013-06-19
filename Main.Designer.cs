@@ -38,12 +38,13 @@
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.lInfo = new System.Windows.Forms.Label();
             this.lVersion = new System.Windows.Forms.Label();
+            this.btnInitialAndStartAP = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lSSID
             // 
             this.lSSID.AutoSize = true;
-            this.lSSID.Location = new System.Drawing.Point(51, 29);
+            this.lSSID.Location = new System.Drawing.Point(51, 27);
             this.lSSID.Name = "lSSID";
             this.lSSID.Size = new System.Drawing.Size(144, 13);
             this.lSSID.TabIndex = 0;
@@ -51,7 +52,7 @@
             // 
             // txtSSID
             // 
-            this.txtSSID.Location = new System.Drawing.Point(201, 26);
+            this.txtSSID.Location = new System.Drawing.Point(201, 24);
             this.txtSSID.Name = "txtSSID";
             this.txtSSID.Size = new System.Drawing.Size(131, 20);
             this.txtSSID.TabIndex = 1;
@@ -60,7 +61,7 @@
             // lPassword
             // 
             this.lPassword.AutoSize = true;
-            this.lPassword.Location = new System.Drawing.Point(51, 60);
+            this.lPassword.Location = new System.Drawing.Point(51, 58);
             this.lPassword.Name = "lPassword";
             this.lPassword.Size = new System.Drawing.Size(85, 13);
             this.lPassword.TabIndex = 2;
@@ -68,7 +69,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(201, 57);
+            this.txtPassword.Location = new System.Drawing.Point(201, 55);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(131, 20);
             this.txtPassword.TabIndex = 3;
@@ -76,9 +77,9 @@
             // 
             // btnStartAP
             // 
-            this.btnStartAP.Location = new System.Drawing.Point(80, 101);
+            this.btnStartAP.Location = new System.Drawing.Point(134, 93);
             this.btnStartAP.Name = "btnStartAP";
-            this.btnStartAP.Size = new System.Drawing.Size(112, 23);
+            this.btnStartAP.Size = new System.Drawing.Size(119, 50);
             this.btnStartAP.TabIndex = 4;
             this.btnStartAP.Text = "Start AP/启动热点";
             this.btnStartAP.UseVisualStyleBackColor = true;
@@ -86,9 +87,9 @@
             // 
             // btnStopAP
             // 
-            this.btnStopAP.Location = new System.Drawing.Point(197, 101);
+            this.btnStopAP.Location = new System.Drawing.Point(259, 93);
             this.btnStopAP.Name = "btnStopAP";
-            this.btnStopAP.Size = new System.Drawing.Size(111, 23);
+            this.btnStopAP.Size = new System.Drawing.Size(111, 50);
             this.btnStopAP.TabIndex = 5;
             this.btnStopAP.Text = "Stop AP/停止热点";
             this.btnStopAP.UseVisualStyleBackColor = true;
@@ -122,11 +123,22 @@
             this.lVersion.Size = new System.Drawing.Size(0, 13);
             this.lVersion.TabIndex = 8;
             // 
+            // btnInitialAndStartAP
+            // 
+            this.btnInitialAndStartAP.Location = new System.Drawing.Point(12, 93);
+            this.btnInitialAndStartAP.Name = "btnInitialAndStartAP";
+            this.btnInitialAndStartAP.Size = new System.Drawing.Size(116, 50);
+            this.btnInitialAndStartAP.TabIndex = 9;
+            this.btnInitialAndStartAP.Text = "Initial and Start AP / 初始化并启动热点";
+            this.btnInitialAndStartAP.UseVisualStyleBackColor = true;
+            this.btnInitialAndStartAP.Click += new System.EventHandler(this.btnInitialAndStartAP_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 338);
+            this.Controls.Add(this.btnInitialAndStartAP);
             this.Controls.Add(this.lVersion);
             this.Controls.Add(this.lInfo);
             this.Controls.Add(this.txtOutput);
@@ -158,6 +170,7 @@
         private System.Windows.Forms.TextBox txtOutput;
         private System.Windows.Forms.Label lInfo;
         private System.Windows.Forms.Label lVersion;
+        private System.Windows.Forms.Button btnInitialAndStartAP;
     }
 }
 

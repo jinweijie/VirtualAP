@@ -19,9 +19,10 @@ namespace VirtualAP
         {
             InitializeComponent();
         }
+
         #region event handler
-        
-        private void btnStartAP_Click(object sender, EventArgs e)
+
+        private void btnInitialAndStartAP_Click(object sender, EventArgs e)
         {
             bool isInputValid = ValidInput();
 
@@ -31,7 +32,12 @@ namespace VirtualAP
             var ssid = this.txtSSID.Text.Trim();
             var password = this.txtPassword.Text.Trim();
 
-            StartAP(ssid, password);
+            InitialAndStartAP(ssid, password);
+        }
+
+        private void btnStartAP_Click(object sender, EventArgs e)
+        {
+            StartAP();
         }
         
         private void btnStopAP_Click(object sender, EventArgs e)
@@ -95,15 +101,23 @@ namespace VirtualAP
             return true;
         }
 
-        private void StartAP(string ssid, string password)
+        private void InitialAndStartAP(string ssid, string password)
         {
             this.txtOutput.Text = string.Empty;
 
-            string cmd1 = string.Format(@"netsh wlan set hostednetwork mode=allow ssid={0} key=""{1}""", ssid, password);
-            ExecuteCmd(cmd1);
+            string cmd = string.Format(@"netsh wlan set hostednetwork mode=allow ssid={0} key=""{1}""", ssid, password);
+            ExecuteCmd(cmd);
 
-            string cmd2 = string.Format(@"netsh wlan start hostednetwork");
-            ExecuteCmd(cmd2);
+            StartAP();
+        }
+
+
+        private void StartAP()
+        {
+            this.txtOutput.Text = string.Empty;
+
+            string cmd = string.Format(@"netsh wlan start hostednetwork");
+            ExecuteCmd(cmd);
         }
 
         private void ExecuteCmd(string cmd)
@@ -171,6 +185,8 @@ namespace VirtualAP
         }
 
         #endregion
+
+        
 
         
     }
