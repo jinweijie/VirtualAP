@@ -9,3 +9,4 @@ docs/
 *.pubxml.user
 packages/*
 !packages/repositories.config
+.vs
